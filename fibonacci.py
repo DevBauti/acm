@@ -3,9 +3,11 @@
 while True:
     try: 
         n = int(input("escribe un numero:"))
+        if n < 0:
+            raise ValueError("no puede ser negativo")
         break
-    except ValueError:
-        print({'Error': 'No es un num'})   
+    except ValueError() as e :
+        print(e)   
 
 
 #ciclo while
@@ -17,7 +19,7 @@ def fib(n):
     
     return a
 
-print(fib(n))
+# print(fib(n))
 
 
 def fibo(n):
@@ -30,11 +32,11 @@ def fibo(n):
 
 # print(fibo(n))
 
-def fibo_recursivo(n):
+def fibo_recur(n):
     # limpio pero costoso O(n^2)
     if n > 1:
-        return fibo_recursivo(n-1) + fibo_recursivo(n-2)
+        return fibo_recur(n-1) + fibo_recur(n-2)
     
     return n
     
-print(fibo_recursivo(n))
+print(fibo_recur(n))
