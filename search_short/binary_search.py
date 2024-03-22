@@ -21,14 +21,8 @@ def binary_search(ls, target):
 print(binary_search(ls, target))
 
 """
-La busqueda es exacta, ni no coincide a la perfeccion devuelve -1
+Funciona con listas ordenadas, no olvidar
 
-print(binary_search([12,13,45,88,64,3],3))
-#-1 esto se da por que toma hasta el primero que encuentra, si no es, te da -1
-print(binary_search('18712899asd','a'))
-#8
-print(binary_search(['as','sa','cc','ba','ss','aa'],'cc'))
-#2
 """
 
 def bsRecursive(ls, target, left, rigth):
