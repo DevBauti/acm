@@ -42,8 +42,5 @@ def bs(ls, target):
     return bsRecursive(ls, target, 0, len(ls)-1)
 
 """
-print(bs([12,31,45,123,879,9182,99,12],879))
-#4
-print(bs([12,31,45,123,879,9182,99,12],45))
-#2
+
 """
