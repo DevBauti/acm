@@ -2,9 +2,9 @@
 
 ls = input("agrega la entrada: ")
 
-# O(n log n)
+# O(n log n) / peor de los casos O(n^2)
 
-def quick_sort(ls):
+def Quick_sort(ls):
     #0 o 1 return []
     if len(ls) <= 1:
         return ls
@@ -18,19 +18,19 @@ def quick_sort(ls):
     right = [x for x in ls if x > pivot]
     
     #llamar recursivamente y retornar ordenado
-    return quick_sort(left) + middle + quick_sort(right)
+    return Quick_sort(left) + middle + Quick_sort(right)
 
 
-print(quick_sort(ls))
+print(Quick_sort(ls))
 
 """
-print(quick_sort([123,456,177182,19]))
+print(Quick_sort([123,456,177182,19]))
 #[19, 123, 456, 177182]
 
-print(quick_sort('hagsaioxkkkkkknasbavd'))
+print(Quick_sort('hagsaioxkkkkkknasbavd'))
 #['a', 'a', 'a', 'a', 'b', 'd', 'g', 'h', 'i', 'k', 'k', 'k', 'k', 'k', 'k', 'n', 'o', 's', 's', 'v', 'x']
 
-print(quick_sort(lorem ipsum))
+print(Quick_sort(lorem ipsum))
 #[' ', 'e', 'i', 'l', 'm', 'm', 'o', 'p', 'r', 's', 'u']
 
 Okey esto es genial, se puede mejorar con regex
