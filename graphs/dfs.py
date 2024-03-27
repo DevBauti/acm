@@ -1,23 +1,31 @@
 
 
-#
-def dfs(graph, start):
-    visited = set()
-    #colocar el nodo en la pila 
-    stack = [start]
+#exploracion profunda
+def dfs(graph, start, visited=None ):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    result = [start]
 
-    #mientras la pila no este vacia
-    while stack:
-        vertex = stack.pop() #saca un nodo
-        if vertex not in visited: 
-            visited.add(vertex)
-            stack.extend(graph[vertex]-visited) #
-    # todos los caminos usados
-    return visited
+    for n in graph[start]:
+        if  n not in visited:
+            result.extend(dfs(graph, n, visited))
 
-a = set()
+    return result
 
-print(a)
-"""
 
 """
+busqueda en profundidad
+"""
+b = {'a':['b','c','e'],
+     'b':['a','c','d'],
+     'c':['b','d'],
+     'd':['e','a','f','c'],
+     'e':['g'],
+     'f':['c','d','b'],
+     'g':['e'],
+     }
+
+print(dfs(b, 'a'))
+print(dfs(b, 'g'))
+print(dfs(b, 'b'))
